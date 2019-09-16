@@ -1,5 +1,5 @@
 # Todo приложение
-## Стек технологий:
+### Стек технологий:
 
 React + Redux + Node + Mongodb atlas
 
