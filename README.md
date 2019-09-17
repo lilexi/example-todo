@@ -9,4 +9,7 @@ React + Redux + Node + Mongodb atlas
 - [ ] Реализовать авторизацию пользователей
 - [ ] Кнопки, анимации, прочее 
 
+### Скриншоты:
+
+
 :octocat: [Backend](https://github.com/LilExi/example-todo-node-mongodb)
