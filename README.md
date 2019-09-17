@@ -11,5 +11,4 @@ React + Redux + Node + Mongodb atlas
 
 ### Скриншоты:
 
-
 :octocat: [Backend](https://github.com/LilExi/example-todo-node-mongodb)
