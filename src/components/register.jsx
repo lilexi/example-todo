@@ -9,11 +9,11 @@ export default class register extends Component {
           Login: <br/>
           <input type="text" /> <br/>
           Email: <br/>
-          <input type="text" name="" id="" />
-          Passowrd:
-          <input type="text" />
-          Passowrd:
-          <input type="text" />
+          <input type="text" name="" id="" /> <br/>
+          Passowrd: <br/>
+          <input type="text" /> <br/>
+          Passowrd: <br/>
+          <input type="text" /> <br/>
           <br />
           <button>Register</button>
         </div>

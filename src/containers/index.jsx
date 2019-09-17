@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Header from "./header";
+import Todo from './todos'
 
 export class index extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export class index extends Component {
     return (
       <div>
         <Header />
+        <Todo />
       </div>
     );
   }

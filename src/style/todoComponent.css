@@ -1,0 +1,78 @@
+.oneTodo {
+    margin: 10px;
+    font-weight: 600;
+    letter-spacing: 0.9px;
+}
+
+.todoComponent {
+    margin: 0 auto;
+    width: 40%;
+    padding: 5px;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    background-color: #fff;
+    text-align: start;
+    font-size: 14px;
+}
+
+.subInfo {
+    text-align: start;
+    display: grid;
+    grid-template-rows: 1fr 0.1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1px;
+    grid-template-areas:
+        "note note"
+        "tags date";
+    width: 38%;
+    margin: auto;
+    padding: 3px;
+    border: 1px solid gray;
+    border-top: 0px;
+    border-radius: 0 0 5px 5px;
+    background-color: white;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.note {
+    grid-area: note;
+    width: 100%;
+    margin: 10px auto;
+    margin-left: 5px;
+}
+
+.tags {
+    grid-area: tags;
+    margin: 5px;
+}
+
+.date {
+    grid-area: date;
+    text-align: end;
+    margin: 5px;
+}
+
+.title-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 0.01fr 0.01fr;
+    grid-gap: 1px;
+    grid-template-areas: "title btn-done btn-delete";
+}
+
+.title {
+    grid-area: title;
+    margin-left: 5px;
+    margin-top: 0 auto;
+}
+
+.btn-done {
+    grid-area: btn-done;
+    margin-top: 2px;
+}
+
+.btn-delete {
+    grid-area: btn-delete;
+    margin-top: 2px;
+}
