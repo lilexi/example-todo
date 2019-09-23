@@ -9,7 +9,26 @@
     background-color: #fff;
 }
 
-.auth-content {
+.auth input {
     position: relative;
-    margin: 10% auto;
+    margin-top: 10px;
+    width: 80%;
+    height: 25px;
+    
+}
+
+.btn-reg {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    height: 35px;
+    border: 1px solid rgba(0, 0, 0, 0.452);
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.a-t {
+    position: relative;
+    text-align: start;
+    margin: 10px 0 5px 25px;
 }
