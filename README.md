@@ -10,9 +10,16 @@ React + Redux + Node + Mongodb atlas
 - [ ] Кнопки, анимации, прочее 
 
 ### NOTE:
-23.09   - Добавлены экшены для регистрации. Переделана форма для регистрации.
-        - Просмотрена статья по ["Аутентификации на Node"](https://code.tutsplus.com/ru/tutorials/site-authentication-in-nodejs-user-sign-up--cms-29933)
-        - Просмотрена статья ["Аутентификация в Node.js с использованием Passport.js"](https://medium.com/devschacht/node-hero-chapter-8-27b74c33a5ce)
+
+##### 23.09.19 
+
+Добавлены экшены для регистрации. Переделана форма для регистрации.
+
+Просмотрена статья по ["Аутентификации на Node"](https://code.tutsplus.com/ru/tutorials/site-authentication-in-nodejs-user-sign-up--cms-29933).
+
+Просмотрена статья ["Аутентификация в Node.js с использованием Passport.js"](https://medium.com/devschacht/node-hero-chapter-8-27b74c33a5ce).
+
+#
         
 
 ### Скриншоты:
