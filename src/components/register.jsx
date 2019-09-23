@@ -55,8 +55,7 @@ class register extends Component {
 
 const mapStateToProps = state => {
   return {
-      user: state.authReducer.user ? state.authReducer.user : null,
-      errorMessage: state.authReducer.error ? state.authReducer.error.message : "",
+      
   }
 };
 const mapDispatchToProps = dispatch => {
