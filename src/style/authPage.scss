@@ -1,0 +1,269 @@
+// colors
+$bgColor: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
+$input-background: rgba(57, 63, 84, 0.8);
+$input-text-inactive: #7881a1;
+$input-text-active: #bfd2ff;
+
+// gradient animation
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+// pulse animation
+@keyframes Pulse {
+  0% {
+    box-shadow: 0 0 4px rgba(73, 212, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 7px rgba(73, 212, 255, 0.99);
+  }
+  100% {
+    box-shadow: 0 0 8px rgba(73, 212, 255, 0.863);
+  }
+}
+
+// @-webkit-keyframes Pulse {
+//   0% {
+//     -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, 0.2);
+//   }
+//   50% {
+//     -webkit-box-shadow: 0 0 14px rgba(0, 0, 0, 0.99);
+//   }
+//   100% {
+//     -webkit-box-shadow: 0 0 14px rgba(73, 212, 255, 0.863);
+//   }
+// }
+
+.registerPage-container {
+  position: absolute;
+  background-image: $bgColor;
+  width: 100%;
+  height: 100%;
+  color: white;
+
+  .content {
+    margin: 30% 0 0 0;
+
+    .reg-text {
+      position: relative;
+      font-size: 2vw;
+      width: 20%;
+      margin: 0 auto;
+      padding-bottom: 10px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        z-index: 999;
+        height: 5px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        // border-radius: 8px;
+        background-position: 0% 0%;
+        background: linear-gradient(
+          to right,
+          #b294ff,
+          #57e6e6,
+          #feffb8,
+          #57e6e6,
+          #b294ff,
+          #57e6e6
+        );
+        background-size: 500% auto;
+        animation: gradient 2s linear infinite;
+      }
+    }
+
+    .register-form {
+      display: block;
+      width: 20%;
+      height: 30%;
+      // border: 1px solid #66d4ff3b;
+      // border-radius: 8px;
+      margin: -5px auto;
+      // background-color: rgb(32, 32, 32);
+
+      .auth {
+        width: 100%;
+        height: 90%;
+        margin: 0 auto;
+
+        position: relative;
+        border-radius: 2px;
+        background: $input-background;
+        padding: 5% 0;
+       
+
+        p {
+          text-align: start;
+          margin: 10px 0 10px 44px;
+        }
+
+        input {
+          display: block;
+          margin: 0 auto;
+          width: 70%;
+          height: 25px;
+          border: 1px solid #66d4ff69;
+          border-radius: 3px;
+          background-color: #222222;
+          margin-top: 10px;
+          color: white;
+
+          @media screen and (max-width: 1000px){
+              height: 20px;
+          }
+
+          &::placeholder {
+            color: rgba(255, 255, 255, 0.473);
+            padding-left: 10px;
+            font-size: 0.7vw;
+
+            
+          }
+        }
+      }
+    }
+
+    .btn {
+      display: flex;
+      width: 20%;
+      height: 10%;
+      margin: 15px auto;
+      cursor: pointer;
+
+      .register {
+        border: 1px solid #66d4ffb6;
+        border-radius: 8px;
+        width: 45%;
+        height: 50%;
+        margin: 0 auto;
+
+        &:hover {
+          box-shadow: 0 0 5px 0 rgba(73, 212, 255, 0.863);
+
+          -webkit-animation: Pulse 3s infinite alternate;
+          -o-animation: Pulse 3s infinite alternate;
+          -ms-animation: Pulse 3s infinite alternate;
+          -moz-animation: Pulse 3s infinite alternate;
+          animation: Pulse 1.5s infinite alternate;
+        }
+
+        p {
+          font-size: 1vw;
+          margin: 4px auto;
+          padding: 0;
+        }
+      }
+
+      .login {
+        @extend .register;
+        margin-left: 20px;
+      }
+
+      .btn-back {
+  
+        width: 50px;
+        height: 50px;
+        // border: 1px solid red;
+        position: relative;
+        right: 20%;
+        top: -60px;
+        bottom: 20%;
+
+        @media only screen and (max-width: 1450px){
+          right: 22%;
+        }
+        @media only screen and (max-width: 1200px){
+          right: 25%;
+        }
+        @media only screen and (max-width: 1050px){
+          right: 35%;
+        }
+        @media only screen and (max-width: 600px){
+          right: 49%;
+        }
+
+        .top-line {
+          position: relative;
+          width: 24px;
+          // border-bottom: 1px solid green;
+          transform: rotate(-45deg);
+          top: 32%;
+          left: 29px;
+          
+          
+      
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            z-index: 999;
+            height: 5px;
+            // border-top-left-radius: 2px;
+            // border-top-right-radius: 8px;
+           // border-bottom-right-radius: 8px;
+            border-radius: 9px;
+            background-position: 0% 0%;
+            background: linear-gradient(
+              to left,
+              #b294ff,
+              #57e6e6,
+              #feffb8,
+              #57e6e6,
+              #b294ff,
+              #57e6e6
+            );
+            background-size: 500% auto;
+            animation: gradient 2s linear infinite;
+          }    
+        }
+      
+        .bot-line {
+          position: relative;
+          width: 25px;
+          // border-bottom: 1px solid green;
+          top: 61%; 
+          left: 25px;
+          transform: rotate(45deg); 
+      
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            z-index: 999;
+            height: 5px;
+            // border-top-left-radius: 2px;
+            // border-top-right-radius: 8px;
+            // border-bottom-right-radius: 8px;
+            border-radius: 8px;
+            background-position: 0% 0%;
+            background: linear-gradient(
+              to left,
+              #b294ff,
+              #57e6e6,
+              #feffb8,
+              #57e6e6,
+              #b294ff,
+              #57e6e6
+            );
+            background-size: 500% auto;
+            animation: gradient 2s linear infinite;
+          }     
+        }
+      }
+    }
+  }
+}
+
