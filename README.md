@@ -85,6 +85,6 @@
 
 ##### 02.10.19 
 
-![02.10](https://github.com/LilExi/example-todo/blob/master/Screenshots/Oct-02-2019 02-23-15?raw=true)
+![02.10](https://github.com/LilExi/example-todo/blob/master/Screenshots/Oct-02-2019%2002-23-15.gif?raw=true)
 
 :octocat: [Backend](https://github.com/LilExi/example-todo-node)
