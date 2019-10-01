@@ -10,7 +10,6 @@ export const createUser = user => {
         password: user[2]
       })
       .then(function(response) {
-        console.log(response.data);
         dispatch(loginUser(response.data.data));
       })
       .catch(function(error) {

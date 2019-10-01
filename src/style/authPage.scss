@@ -46,8 +46,31 @@ $input-text-active: #bfd2ff;
   color: white;
 
   .content {
-    margin: 30% 0 0 0;
-
+    margin: 25% 0 0 0;
+    @media only screen and (max-width: 1400px) {
+      margin: 35% 0 0 0;
+    }
+    @media only screen and (max-width: 1200px) {
+      margin: 40% 0 0 0;
+    }
+    @media only screen and (max-width: 1100px) {
+      margin: 45% 0 0 0;
+    }
+    @media only screen and (max-width: 800px) {
+      margin: 55% 0 0 0;
+    }
+    @media only screen and (max-width: 600px) {
+      margin: 75% 0 0 0;
+    }
+    @media only screen and (max-height: 740px) {
+      margin: 25% 0 0 0;
+    }
+    @media only screen and (max-height: 650px) {
+      margin: 20% 0 0 0;
+    }
+    @media only screen and (max-height: 590px) {
+      margin: 15% 0 0 0;
+    }
     .reg-text {
       position: relative;
       font-size: 2vw;
@@ -65,7 +88,6 @@ $input-text-active: #bfd2ff;
         height: 5px;
         border-top-left-radius: 2px;
         border-top-right-radius: 2px;
-        // border-radius: 8px;
         background-position: 0% 0%;
         background: linear-gradient(
           to right,
@@ -85,21 +107,16 @@ $input-text-active: #bfd2ff;
       display: block;
       width: 20%;
       height: 30%;
-      // border: 1px solid #66d4ff3b;
-      // border-radius: 8px;
       margin: -5px auto;
-      // background-color: rgb(32, 32, 32);
 
       .auth {
         width: 100%;
         height: 90%;
         margin: 0 auto;
-
         position: relative;
         border-radius: 2px;
         background: $input-background;
         padding: 5% 0;
-       
 
         p {
           text-align: start;
@@ -117,18 +134,34 @@ $input-text-active: #bfd2ff;
           margin-top: 10px;
           color: white;
 
-          @media screen and (max-width: 1000px){
-              height: 20px;
+          @media screen and (max-width: 1000px) {
+            height: 20px;
           }
 
           &::placeholder {
             color: rgba(255, 255, 255, 0.473);
             padding-left: 10px;
             font-size: 0.7vw;
-
-            
           }
         }
+      }
+      .modal-message-error {
+        margin: 5px auto;
+        width: 20%;
+        height: 30px;
+        font-size: 1vw;
+        border-left: 2px solid rgba(255, 0, 0, 0.76);
+
+        p {
+          text-align: start;
+          margin-top: 6px;
+          margin-left: 5px;
+        }
+      }
+
+      .modal-message-success {
+        @extend .modal-message-error;
+        border-left: 2px solid rgba(117, 255, 90, 0.774);
       }
     }
 
@@ -148,7 +181,6 @@ $input-text-active: #bfd2ff;
 
         &:hover {
           box-shadow: 0 0 5px 0 rgba(73, 212, 255, 0.863);
-
           -webkit-animation: Pulse 3s infinite alternate;
           -o-animation: Pulse 3s infinite alternate;
           -ms-animation: Pulse 3s infinite alternate;
@@ -169,38 +201,33 @@ $input-text-active: #bfd2ff;
       }
 
       .btn-back {
-  
         width: 50px;
         height: 50px;
-        // border: 1px solid red;
         position: relative;
         right: 20%;
         top: -60px;
         bottom: 20%;
 
-        @media only screen and (max-width: 1450px){
+        @media only screen and (max-width: 1450px) {
           right: 22%;
         }
-        @media only screen and (max-width: 1200px){
+        @media only screen and (max-width: 1200px) {
           right: 25%;
         }
-        @media only screen and (max-width: 1050px){
+        @media only screen and (max-width: 1050px) {
           right: 35%;
         }
-        @media only screen and (max-width: 600px){
+        @media only screen and (max-width: 600px) {
           right: 49%;
         }
 
         .top-line {
           position: relative;
           width: 24px;
-          // border-bottom: 1px solid green;
           transform: rotate(-45deg);
           top: 32%;
           left: 29px;
-          
-          
-      
+
           &:before {
             content: "";
             position: absolute;
@@ -209,9 +236,6 @@ $input-text-active: #bfd2ff;
             bottom: 0px;
             z-index: 999;
             height: 5px;
-            // border-top-left-radius: 2px;
-            // border-top-right-radius: 8px;
-           // border-bottom-right-radius: 8px;
             border-radius: 9px;
             background-position: 0% 0%;
             background: linear-gradient(
@@ -225,17 +249,16 @@ $input-text-active: #bfd2ff;
             );
             background-size: 500% auto;
             animation: gradient 2s linear infinite;
-          }    
+          }
         }
-      
+
         .bot-line {
           position: relative;
           width: 25px;
-          // border-bottom: 1px solid green;
-          top: 61%; 
+          top: 61%;
           left: 25px;
-          transform: rotate(45deg); 
-      
+          transform: rotate(45deg);
+
           &:before {
             content: "";
             position: absolute;
@@ -244,9 +267,6 @@ $input-text-active: #bfd2ff;
             bottom: 0px;
             z-index: 999;
             height: 5px;
-            // border-top-left-radius: 2px;
-            // border-top-right-radius: 8px;
-            // border-bottom-right-radius: 8px;
             border-radius: 8px;
             background-position: 0% 0%;
             background: linear-gradient(
@@ -260,10 +280,9 @@ $input-text-active: #bfd2ff;
             );
             background-size: 500% auto;
             animation: gradient 2s linear infinite;
-          }     
+          }
         }
       }
     }
   }
 }
-

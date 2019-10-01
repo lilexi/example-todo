@@ -5,11 +5,10 @@ export const authenticate = user => {
   return dispatch => {
     axios
       .post(url + "users/signin", {
-        email: user[0],
-        password: user[1]
+        email: user[1],
+        password: user[2]
       })
       .then(function(response) {
-        console.log(response.data.data.token);
         dispatch(loginUser(response.data.data));
         localStorage.setItem("token", response.data.data.token);
       })
