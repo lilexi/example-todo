@@ -104,6 +104,6 @@
 
 ##### 24.10.19
 
-![02.10]()
+![02.10](https://github.com/LilExi/example-todo/blob/master/Screenshots/Oct-24-2019%2004-14-36.gif?raw=true)
 
 :octocat: [Backend](https://github.com/LilExi/example-todo-node)
