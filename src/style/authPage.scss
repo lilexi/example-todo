@@ -1,5 +1,6 @@
 // colors
-$bgColor: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
+// $bgColor: radial-gradient(circle at 0% 0%, #373b52, #252736 51%, #1d1e26);
+$bgColor: #fff;
 $input-background: rgba(57, 63, 84, 0.8);
 $input-text-inactive: #7881a1;
 $input-text-active: #bfd2ff;
@@ -43,7 +44,7 @@ $input-text-active: #bfd2ff;
   background-image: $bgColor;
   width: 100%;
   height: 100%;
-  color: white;
+  // color: white;
 
   .content {
     margin: 25% 0 0 0;

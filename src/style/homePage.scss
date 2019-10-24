@@ -1,0 +1,150 @@
+$bgColor: radial-gradient(circle at 0% 0%, #eaebf0, #5b5c68 51%, #1d1e26);
+
+.loading {
+  position: relative;
+  margin: 20% auto;
+
+  .title {
+    font-weight: bold;
+  }
+}
+
+.homePage-container {
+  position: absolute;
+  background-image: white;
+  width: 100%;
+  height: 100%;
+
+  .profile {
+    position: relative;
+    width: 95%;
+    height: 150px;
+    margin: 2% auto;
+    display: flex;
+
+    .avatar {
+      position: relative;
+      width: 10%;
+    }
+
+    .user-info {
+      position: relative;
+      width: 10%;
+      margin: 40px 0;
+      text-align: start;
+      font-weight: bold;
+      font-size: 1em;
+    }
+  }
+
+  .todos-container {
+    position: relative;
+    display: flex;
+    width: 95%;
+    height: 70%;
+    margin: 10px auto;
+
+    .calendar {
+      position: relative;
+      width: 20%;
+      height: 100%;
+      margin: 0 0 0 20px;
+      .react-calendar {
+        box-shadow: 1px 1px 8px #2222224b;
+        //
+      }
+
+      .statistics {
+        margin-top: 10px;
+        margin-left: 5px;
+
+        .title {
+          text-align: start;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 0.75em;
+        }
+
+        .statistics-info {
+          margin-left: 20px;
+        }
+        p {
+          margin-top: 5px;
+          text-align: start;
+          font-size: 0.65em;
+        }
+      }
+    }
+
+    .todo {
+      position: relative;
+      width: 80%;
+      display: flex;
+
+      .do {
+        border: 1px solid gray;
+        border-radius: 4px;
+        width: 30%;
+        height: 100%;
+        margin-left: 20px;
+        box-shadow: 1px 1px 8px #2222224b;
+
+        p {
+          text-align: start;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 1em;
+          margin: 10px 0 0 20px;
+        }
+
+        .do-add {
+          position: relative;
+          margin-top: 10px;
+          width: 90%;
+          height: 50px;
+          border: 1px solid gray;
+          border-radius: 8px;
+          margin: 10px auto;
+          display: flex;
+
+          input {
+            border: none;
+            border-radius: 5px;
+            margin-top: 0px;
+            margin-left: 10px;
+            width: 80%;
+            height: 100%;
+            align-self: start;
+          }
+
+          input:focus {
+            outline: none;
+          }
+
+          .add-btn {
+            position: relative;
+            margin: 0 auto;
+            padding-top: 4.5%;
+          }
+        }
+      }
+
+      .in-progress {
+        @extend .do;
+      }
+
+      .done {
+        @extend .do;
+      }
+
+      .kek1 {
+        position: relative;
+        border: 1px solid purple;
+        border-radius: 8px;
+        width: 90%;
+        height: 50px;
+        margin: 15px auto;
+      }
+    }
+  }
+}

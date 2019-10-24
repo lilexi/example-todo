@@ -8,6 +8,9 @@ export default function reducer(state = initialState, action) {
       return { ...state, User: action.payload };
     case "SIGN_UP":
       return { ...state, User: action.payload };
+    case "VERIFY":
+      return {...state, User: action.payload};
+    
     default:
       return state;
   }

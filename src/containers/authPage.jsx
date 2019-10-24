@@ -9,7 +9,7 @@ export class authPage extends Component {
     super(props);
     this.state = {
       hideBtn: "",
-      title: "Hello, it`s a todo app",
+      title: "Hello, it`s a todo app 🤫",
       showRegistrationForm: "none",
       showLoginForm: "none",
       showBackBtn: "none"
@@ -39,7 +39,7 @@ export class authPage extends Component {
   onBack = () => {
     this.setState({
       hideBtn: "",
-      title: "Hello, it`s a todo app",
+      title: "Hello, it`s a todo app 🤫",
       showRegistrationForm: "none",
       showLoginForm: "none",
       showBackBtn: "none"
