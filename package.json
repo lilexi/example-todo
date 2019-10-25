@@ -36,5 +36,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "<b>Frotend </b>: React + Redux",
+  "main": "test.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LilExi/example-todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LilExi/example-todo/issues"
+  },
+  "homepage": "https://github.com/LilExi/example-todo#readme"
 }

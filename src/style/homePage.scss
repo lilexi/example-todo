@@ -123,8 +123,32 @@ $bgColor: radial-gradient(circle at 0% 0%, #eaebf0, #5b5c68 51%, #1d1e26);
 
           .add-btn {
             position: relative;
-            margin: 0 auto;
-            padding-top: 4.5%;
+            // margin: 50px auto;
+            padding: 2%;
+            margin: 7px 10px;
+            border: 1px solid gray;
+            background: #fff;
+            border-radius: 100px;
+            width: 6.5%;
+            height: 41%;
+            cursor: pointer;
+            opacity: 0.5;
+
+            &:hover {
+              background: #006edc;
+              opacity: 1;
+              p {
+                color: white;
+              }
+            }
+
+            p {
+              margin: 0;
+              padding: 0;
+              margin-top: 0px;
+              text-align: center;
+              // color: white;
+            }
           }
         }
       }
@@ -137,13 +161,23 @@ $bgColor: radial-gradient(circle at 0% 0%, #eaebf0, #5b5c68 51%, #1d1e26);
         @extend .do;
       }
 
-      .kek1 {
+      .todo-comp {
         position: relative;
         border: 1px solid purple;
         border-radius: 8px;
         width: 90%;
         height: 50px;
         margin: 15px auto;
+      }
+
+      .in-comp {
+        @extend .todo-comp;
+        border: 1px solid orange;
+      }
+
+      .done-comp {
+        @extend .todo-comp;
+        border: 1px solid green;
       }
     }
   }

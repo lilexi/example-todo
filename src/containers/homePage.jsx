@@ -2,20 +2,31 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Avatar from "avataaars";
 import Calendar from "react-calendar";
-import { verify as action } from "../store/Actions/checkToken";
 import { Redirect } from "react-router-dom";
-import Spiner from "../img/kek.gif";
+
+//Components
+import Todo from "../components/UI/todo.component";
+
+//redux
+import { verify as action } from "../store/Actions/checkToken";
+import { addTodo as todoAction } from "../store/Actions/addTodo";
+import { getAllTodo as getTodo } from "../store/Actions/getAllTodo";
+
+// Style & IMG
 import "../style/style.scss";
+import Spiner from "../img/kek.gif";
 
 export class homePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      type: "",
       date: new Date(),
-      tasks: [],
+      title: "",
+      tasks: { title: "", type: "todo", priority: 0 },
       loading: true,
       redirect: false,
-      name: ""
+      todo: []
     };
   }
 
@@ -23,14 +34,23 @@ export class homePage extends Component {
     setTimeout(() => {
       if (this.props.userdata) {
         this.setState({ loading: false });
-      }
-    }, 5000);
+      } else this.setState({ redirect: true });
+    }, 2000);
+    setInterval(() => {
+      this.props.getAllTodo();
+      this.setState({ todo: this.props.todo });
+    }, 1000);
     this.getName();
+    this.props.getAllTodo();
     if (localStorage.token) {
       this.setState({ redirect: false });
       this.props.verify();
     } else this.setState({ redirect: true });
   }
+
+  changeHandler = (event, type) => {
+    this.setState({ [type]: event.target.value });
+  };
 
   renderRedirect = () => {
     if (this.state.redirect) {
@@ -40,24 +60,52 @@ export class homePage extends Component {
 
   onChange = date => this.setState({ date });
 
-  getName = () => {
-    return setTimeout(() => {
-      let name =
-        this.props.userdata.name.charAt(0).toUpperCase() +
-        this.props.userdata.name.slice(1);
-      this.setState({ name: name });
-    }, 400);
+  submit = () => {
+    let data = this.state.tasks;
+    // eslint-disable-next-line react/no-direct-mutation-state
+    this.state.tasks.title = this.state.title;
+    this.props.addTodo(data);
   };
 
-  loading = () => {
-    return (
-      <div className="loading">
-        <div className="title">
-          <p>Loading...</p>
-        </div>
-        <img src={Spiner} alt="" />
-      </div>
-    );
+  getName = () => {
+    return setTimeout(() => {
+      if (this.props.userdata.name) {
+        let name =
+          this.props.userdata.name.charAt(0).toUpperCase() +
+          this.props.userdata.name.slice(1);
+        this.setState({ name: name });
+      }
+    }, 1000);
+  };
+
+  getDo = () => {
+    if (this.state.todo) {
+      return this.state.todo.map((item) => {
+        if (item.type === "todo") {
+          return <Todo className="todo-comp" title={item.title} />;
+        }
+      });
+    }
+  };
+
+  getInprogress = () => {
+    if (this.state.todo) {
+      return this.state.todo.map(item => {
+        if (item.type === "in") {
+          return <Todo className="in-comp" title={item.title} />;
+        }
+      });
+    }
+  };
+
+  getDone = () => {
+    if (this.state.todo) {
+      return this.state.todo.map(item => {
+        if (item.type === "done") {
+          return <Todo className="done-comp" title={item.title} />;
+        }
+      });
+    }
   };
 
   main = () => {
@@ -103,21 +151,43 @@ export class homePage extends Component {
             <div className="do">
               <p>TO-DO</p>
               <div className="do-add">
-                <input type="text" placeholder="add new task" />
-                <div className="add-btn"> Add </div>
+                <input
+                  value={this.state.title}
+                  onChange={event => {
+                    this.changeHandler(event, "title");
+                  }}
+                  type="text"
+                  placeholder="add new task"
+                />
+
+                <div className="add-btn" type="submit" onClick={this.submit}>
+                  {" "}
+                  <p>+</p>{" "}
+                </div>
               </div>
-              <div className="do-todos">
-                <div className="kek1"></div>
-              </div>
+              <div className="do-todos">{this.getDo()}</div>
             </div>
             <div className="in-progress">
               <p>In-Progress</p>
+              {this.getInprogress()}
             </div>
             <div className="done">
               <p>Done</p>
+              {this.getDone()}
             </div>
           </div>
         </div>
+      </div>
+    );
+  };
+
+  loading = () => {
+    return (
+      <div className="loading">
+        <div className="title">
+          <p>Loading...</p>
+        </div>
+        <img src={Spiner} alt="" />
       </div>
     );
   };
@@ -133,11 +203,14 @@ export class homePage extends Component {
 }
 
 const mapStateToProps = state => ({
-  userdata: state.Auth.User
+  userdata: state.Auth.User,
+  todo: state.Todo.TODO
 });
 
 const mapDispatchToProps = dispatch => ({
-  verify: () => dispatch(action())
+  verify: () => dispatch(action()),
+  addTodo: data => dispatch(todoAction(data)),
+  getAllTodo: () => dispatch(getTodo())
 });
 
 export default connect(

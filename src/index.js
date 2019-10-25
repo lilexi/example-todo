@@ -10,6 +10,7 @@ import * as serviceWorker from "./serviceWorker";
 
 //reducer
 import Auth from "./store/Reducers/auth.reducer"
+import Todo from "./store/Reducers/todo.reducer"
 
 
 //redux
@@ -25,7 +26,7 @@ const composeEnhancers =
       })
     : compose;
 // const composeEnhancers = null || compose;
-const rootReducer = combineReducers({ Auth });
+const rootReducer = combineReducers({ Auth, Todo });
 
 const store = createStore(
   rootReducer,
